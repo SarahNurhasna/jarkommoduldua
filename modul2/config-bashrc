@@ -1,0 +1,34 @@
+nano /root/.bashrc
+
+Pandudewanata:
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.42.0.0/16
+echo nameserver 192.168.122.1 > /etc/resolv.conf
+apt-get update
+apt-get install nginx -y
+service nginx start
+
+Yudhistira:
+echo nameserver 192.168.122.1 > /etc/resolv.conf
+apt-get update
+apt-get install bind9 -y
+apt-get install dnsutils -y
+
+Werkudara:
+echo nameserver 192.168.122.1 > /etc/resolv.conf
+apt-get update
+apt-get install bind9 -y
+apt-get install dnsutils -y
+apt-get install apache2 -y
+service apache2 start
+apt-get install lynx
+apt-get install php
+
+Nakula:
+echo nameserver 192.168.122.1 > /etc/resolv.conf
+apt-get update
+apt-get install lynx -y
+
+Sadewa:
+echo nameserver 192.168.122.1 > /etc/resolv.conf
+apt-get update
+apt-get install lynx -y
